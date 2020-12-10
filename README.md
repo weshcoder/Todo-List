@@ -2,4 +2,6 @@
 
 ## Welcome to my revamped TODO-LIST:
 
-**if you wanna see the site and try it out the link is: **
+*f you wanna see the site and try it out the link is: https://weshcoder.github.io/Todo-List/.*
+
+--Thank You.
