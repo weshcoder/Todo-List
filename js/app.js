@@ -88,7 +88,7 @@ function removeToDo(element) {
 list.addEventListener("click", function(event){
     let question = prompt("Do you want to delete? | Yes or No (Use Caps)")
 
-    if(question === "Yes") {
+    if(question === ("Yes".toLocaleLowerCase())) {
         const element = event.target; // return the clicked element inside this list
         const elementJob = element.attributes.job.value; // complete or delete
     
