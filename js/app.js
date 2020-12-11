@@ -86,13 +86,20 @@ function removeToDo(element) {
 // target the items created dynamically
 
 list.addEventListener("click", function(event){
-    const element = event.target; // return the clicked element inside this list
-    const elementJob = element.attributes.job.value; // complete or delete
+    let question = prompt("Do you want to delete? | Yes or No (Use Caps)")
 
-    if(elementJob == "complete") {
-        completeToDo(element)
-    }else if (elementJob == "delete"){
-        removeToDo(element)
+    if(question === "Yes") {
+        const element = event.target; // return the clicked element inside this list
+        const elementJob = element.attributes.job.value; // complete or delete
+    
+        if(elementJob == "complete") {
+            completeToDo(element)
+        }else if (elementJob == "delete"){
+            removeToDo(element)
+        }
+    }else{
+        return;
     }
+
 
 }) 
