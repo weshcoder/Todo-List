@@ -5,6 +5,7 @@ const clear = document.querySelector(".clear");
 const dateElement = document.getElementById("date");
 const list = document.getElementById("list");
 const input = document.getElementById("input")
+const searchBar = document.getElementById("searchBar")
 
 
 //Classes names
@@ -39,6 +40,27 @@ function addTodo(toDo, id, done, trash) {
                   `;
     const position = "beforeend";
     list.insertAdjacentHTML(position, item);
+}
+
+
+// Search Bar
+searchBar.addEventListener('input',filter)
+function filter(){
+    search = searchBar.value;
+
+    LIST.forEach(function(li) {
+        text = li.innerHTML;
+        found = text.indexOf(search);
+
+        if(search == ''){
+            li.style.display = 'block'
+        }else if(search == '' || found == -1) {
+            li.style.display = 'none'
+        }
+        else{
+            li.style.display = 'block'
+        }
+    })
 }
 
 
