@@ -34,13 +34,15 @@ function addTodo(toDo, id, done, trash) {
 
     const item =  ` <li class="item">
                         <i class="fa ${DONE} co" job="complete" id ="${id}"></i>
-                        <p class="text ${LINE}">${toDo}</p>
+                        <p class="text ${LINE}">${toDo} <i class="fa fa-star-o" style="cursor: pointer; id="favourite"></i> </p>
                         <i class="fa fa-trash-o de" job="delete" id="${id}"></i>     
                     </li>
                   `;
     const position = "beforeend";
     list.insertAdjacentHTML(position, item);
 }
+
+
 
 
 // Search Bar
@@ -108,9 +110,7 @@ function removeToDo(element) {
 // target the items created dynamically
 
 list.addEventListener("click", function(event){
-    let question = prompt("Do you want to delete? | Yes or No (Use Caps)")
 
-    if(question === ("Yes".toLocaleLowerCase())) {
         const element = event.target; // return the clicked element inside this list
         const elementJob = element.attributes.job.value; // complete or delete
     
@@ -119,9 +119,4 @@ list.addEventListener("click", function(event){
         }else if (elementJob == "delete"){
             removeToDo(element)
         }
-    }else{
-        return;
-    }
-
-
 }) 
